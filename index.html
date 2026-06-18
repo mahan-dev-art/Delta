@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کافه دلتا</title>
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <h3 class="logo">Delta</h3>
+
+        <div class="menu-toggle" id="menuToggle">☰</div>
+
+        <nav class="nav" id="nav">
+            <a href="#">خانه</a>
+            <a href="panel.html">منو</a>
+            <a href="branches.html">آدرس</a>
+        </nav>
+
+    </header>
+
+    <section class="hero">
+        <h1>به کافه دلتا خوش اومدی!</h1>
+    </section>
+
+    <section class="show_caff">
+
+        <div class="show_caffees">
+            <img src="images/caffee.png" alt="">
+        </div>
+
+        <div class="show_caffees">
+            <img src="images/espereso.jpg" alt="">
+        </div>
+
+        <div class="show_caffees">
+            <img src="images/caffee.jpg" alt="">
+        </div>
+
+        <div class="show_caffees">
+            <img src="images/cappochino.jpg" alt="">
+        </div>
+
+        <div class="text">
+            <h2>اینارو حتما امتحان کن!</h2>
+        </div>
+
+    </section>
+
+    <section class="why_we">
+        <div class="texts">
+            <h2>چرا کافه دلتا؟</h2>
+            <p>اینجا ما فقط قهوه و اسپرسو دست مردم نمیدیم، اینجا ما <b>عشق</b> تحویل میدیم ☕</p>
+        </div>
+        <a href="branches.html">
+            <button class="btn-small">شعب</button>
+        </a>
+    </section>
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const nav = document.getElementById("nav");
+
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+
+        const cards = document.querySelectorAll(".show_caffees");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        cards.forEach(card => observer.observe(card));
+    </script>
+
+</body>
+
+</html>

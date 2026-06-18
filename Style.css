@@ -1,0 +1,203 @@
+* {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header {
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+    
+    width: 95%;
+    margin: 15px auto;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 25px;
+    border-radius: 999px;
+
+    background: rgba(75, 46, 43, 0.75);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 40px;
+    color: #fff8f0;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: #fff8f0;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    font-size: clamp(28px, 5vw, 60px);
+    color: white;
+
+    background-repeat: no-repeat;
+
+    /* مهم‌ترین بخش parallax */
+    background-attachment: fixed;
+
+    position: relative;
+}
+
+/* یک لایه تاریک برای حرفه‌ای شدن */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/Cafe_view.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+/* متن بالای لایه */
+.hero h1 {
+    color: white;
+    text-align: center;
+    padding-top: 250px;
+    font-size: 50px;
+
+}
+
+/* ===== COFFEE CARDS ===== */
+.show_caff {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    padding: 60px 20px;
+    background-color: #4b2e2b;
+    filter: blur(5px);
+    transition: 2s ease-in-out;
+}
+
+.show_caff:hover {
+    filter: blur(0);
+}
+
+.show_caffees {
+    background: #fff8f0;
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+    background-color: #4b2e2b;
+}
+
+.show_caffees.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.show_caffees img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+/* ===== WHY ===== */
+.why_we {
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.why_we::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/Cafe_view.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.texts {
+    color: white;
+    text-align: center;
+    padding-top: 250px;
+    font-size: 40px;
+}
+
+/* ===== BUTTON ===== */
+.btn-small {
+    background: #4b2e2b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    margin: 20px;
+    transition: 2s ease-in-out;
+}
+
+.btn-small:hover {
+    background-color: #8c5a3c;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+
+        flex-direction: column;
+        background: rgba(75, 46, 43, 0.95);
+        padding: 20px;
+        border-radius: 20px;
+
+        display: none;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .hero {
+        font-size: 30px;
+        height: 60vh;
+    }
+}

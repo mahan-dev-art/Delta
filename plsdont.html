@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Menu Admin</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+    <div id="loginBox">
+        <h2>ورود مدیر ☕</h2>
+        <input id="pass" type="password" placeholder="رمز">
+        <br>
+        <button onclick="login()">ورود</button>
+    </div>
+
+    <!-- ADMIN -->
+    <div id="adminPanel">
+
+        <h2>پنل مدیریت منو</h2>
+
+        <input id="name" placeholder="نام قهوه">
+        <input id="desc" placeholder="توضیحات">
+        <input id="price" placeholder="قیمت">
+
+        <button onclick="addItem()">افزودن</button>
+        <button onclick="logout()">خروج</button>
+
+        <h2>منو ☕</h2>
+        <div id="menuList" class="menu-grid"></div>
+
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
